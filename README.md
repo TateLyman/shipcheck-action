@@ -46,6 +46,11 @@ If the report finds blockers in an app you own, manual app-rescue reviews are av
 
 https://tatelyman.github.io/tate-web-services/shipcheck.html
 
+For action support and vulnerability reporting, see:
+
+- https://github.com/TateLyman/shipcheck-action/blob/main/SUPPORT.md
+- https://github.com/TateLyman/shipcheck-action/blob/main/SECURITY.md
+
 ## Links
 
 - npm: https://www.npmjs.com/package/shipcheck-cli
