@@ -33,10 +33,37 @@ jobs:
 | Input | Default | Description |
 | --- | --- | --- |
 | `path` | `.` | Repository path to scan. |
-| `format` | `text` | Output format: `text`, `markdown`, or `json`. |
+| `format` | `text` | Output format: `text`, `markdown`, `json`, or `sarif`. |
+| `output` | empty | Optional file path to write the report, such as `shipcheck.sarif`. |
 | `fail-on` | `high` | Lowest severity that fails the workflow: `info`, `low`, `medium`, or `high`. |
 | `strict` | `false` | Set to `true` for stricter release-readiness checks. |
 | `version` | `latest` | npm version of `shipcheck-cli` to run. |
+
+## GitHub Code Scanning
+
+Use SARIF output when you want Shipcheck findings to appear in GitHub's code scanning UI:
+
+```yaml
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  shipcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: TateLyman/shipcheck-action@v1
+        with:
+          format: sarif
+          output: shipcheck.sarif
+          fail-on: medium
+          strict: true
+      - uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: shipcheck.sarif
+```
 
 ## Manual Review
 
