@@ -1,5 +1,9 @@
 # Shipcheck AI App Scanner
 
+[![Marketplace](https://img.shields.io/badge/GitHub%20Marketplace-Shipcheck%20AI%20App%20Scanner-2ea44f)](https://github.com/marketplace/actions/shipcheck-ai-app-scanner)
+[![Demo shipcheck](https://github.com/TateLyman/shipcheck-demo-ai-app/actions/workflows/shipcheck.yml/badge.svg)](https://github.com/TateLyman/shipcheck-demo-ai-app/actions/workflows/shipcheck.yml)
+[![npm version](https://img.shields.io/npm/v/shipcheck-cli.svg)](https://www.npmjs.com/package/shipcheck-cli)
+
 GitHub Action wrapper for [shipcheck-cli](https://www.npmjs.com/package/shipcheck-cli), a release-readiness and AI-app exposure scanner for JavaScript and TypeScript repositories.
 
 Marketplace listing: https://github.com/marketplace/actions/shipcheck-ai-app-scanner
