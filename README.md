@@ -2,6 +2,8 @@
 
 GitHub Action wrapper for [shipcheck-cli](https://www.npmjs.com/package/shipcheck-cli), a release-readiness and AI-app exposure scanner for JavaScript and TypeScript repositories.
 
+Marketplace listing: https://github.com/marketplace/actions/shipcheck-ai-app-scanner
+
 Shipcheck checks common pre-launch risks in AI-built apps: exposed private-looking env vars, hardcoded provider keys, unsigned Stripe webhooks, missing Firebase/Supabase rule evidence, debug routes, missing AI usage guardrails, missing CI, loose dependency versions, and thin release docs.
 
 ## Usage
