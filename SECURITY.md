@@ -1,6 +1,6 @@
 # Security Policy
 
-Shipcheck AI App Scanner is a defensive static scanner. Run it only on repositories you own or are authorized to inspect.
+Shipcheck Repo Scanner is a defensive static scanner. Run it only on repositories you own or are authorized to inspect.
 
 ## Reporting Vulnerabilities
 

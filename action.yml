@@ -1,5 +1,5 @@
-name: Shipcheck AI App Scanner
-description: Scan JavaScript and TypeScript repos for AI-app launch risks before release.
+name: Shipcheck Repo Scanner
+description: Scan JavaScript and TypeScript repos for launch risks before release.
 author: Tate Lyman
 
 branding:

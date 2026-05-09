@@ -1,14 +1,10 @@
-# Shipcheck AI App Scanner
+# Shipcheck Repo Scanner
 
-[![Marketplace](https://img.shields.io/badge/GitHub%20Marketplace-Shipcheck%20AI%20App%20Scanner-2ea44f)](https://github.com/marketplace/actions/shipcheck-ai-app-scanner)
-[![Demo shipcheck](https://github.com/TateLyman/shipcheck-demo-ai-app/actions/workflows/shipcheck.yml/badge.svg)](https://github.com/TateLyman/shipcheck-demo-ai-app/actions/workflows/shipcheck.yml)
 [![npm version](https://img.shields.io/npm/v/shipcheck-cli.svg)](https://www.npmjs.com/package/shipcheck-cli)
 
-GitHub Action wrapper for [shipcheck-cli](https://www.npmjs.com/package/shipcheck-cli), a release-readiness and AI-app exposure scanner for JavaScript and TypeScript repositories.
+GitHub Action wrapper for [shipcheck-cli](https://www.npmjs.com/package/shipcheck-cli), a release-readiness and app exposure scanner for JavaScript and TypeScript repositories.
 
-Marketplace listing: https://github.com/marketplace/actions/shipcheck-ai-app-scanner
-
-Shipcheck checks common pre-launch risks in AI-built apps: exposed private-looking env vars, hardcoded provider keys, unsigned Stripe webhooks, missing Firebase/Supabase rule evidence, debug routes, missing AI usage guardrails, missing CI, loose dependency versions, and thin release docs.
+Shipcheck checks common pre-launch risks in modern full-stack apps: exposed private-looking env vars, hardcoded provider keys, unsigned Stripe webhooks, missing Firebase/Supabase rule evidence, debug routes, missing usage guardrails, missing CI, loose dependency versions, and thin release docs.
 
 ## Usage
 
@@ -69,17 +65,13 @@ jobs:
           sarif_file: shipcheck.sarif
 ```
 
-Demo repo with uploaded code scanning alerts:
-
-https://github.com/TateLyman/shipcheck-demo-ai-app
-
 ## Manual Review
 
 Shipcheck is a defensive static scanner, not a penetration test. Run it only on repositories you own or are authorized to inspect.
 
 If the report finds blockers in an app you own, manual app-rescue reviews are available from the tool page:
 
-https://tatelyman.github.io/tate-web-services/shipcheck.html
+https://tateprograms.com/shipcheck.html
 
 For action support and vulnerability reporting, see:
 
@@ -90,4 +82,4 @@ For action support and vulnerability reporting, see:
 
 - npm: https://www.npmjs.com/package/shipcheck-cli
 - CLI repo: https://github.com/TateLyman/shipcheck-cli
-- Tool page: https://tatelyman.github.io/tate-web-services/shipcheck.html
+- Tool page: https://tateprograms.com/shipcheck.html
