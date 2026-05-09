@@ -1,0 +1,6 @@
+node_modules/
+shipcheck.sarif
+*.log
+.env
+.env.*
+!.env.example

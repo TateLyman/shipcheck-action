@@ -1,0 +1,10 @@
+{
+  "name": "shipcheck-action",
+  "version": "1.1.1",
+  "private": true,
+  "description": "GitHub Action wrapper for Shipcheck release-readiness scans.",
+  "scripts": {
+    "check": "npx --yes shipcheck-cli@0.4.5 test-fixtures/basic-js --format text --fail-on high --strict",
+    "check:sarif": "npx --yes shipcheck-cli@0.4.5 test-fixtures/basic-js --format sarif --fail-on high > shipcheck.sarif && node -e \"const fs = require('fs'); const data = JSON.parse(fs.readFileSync('shipcheck.sarif', 'utf8')); if (data.version !== '2.1.0') throw new Error('Invalid SARIF version');\""
+  }
+}

@@ -2,9 +2,9 @@
 
 [![npm version](https://img.shields.io/npm/v/shipcheck-cli.svg)](https://www.npmjs.com/package/shipcheck-cli)
 
-GitHub Action wrapper for [shipcheck-cli](https://www.npmjs.com/package/shipcheck-cli), a release-readiness and app exposure scanner for JavaScript and TypeScript repositories.
+GitHub Action wrapper for [shipcheck-cli](https://www.npmjs.com/package/shipcheck-cli), a release-readiness and app exposure scanner for JavaScript, TypeScript, package, and MCP repositories.
 
-Shipcheck checks common pre-launch risks in modern full-stack apps: exposed private-looking env vars, hardcoded provider keys, unsigned Stripe webhooks, missing Firebase/Supabase rule evidence, debug routes, missing usage guardrails, missing CI, loose dependency versions, and thin release docs.
+Shipcheck checks common pre-launch risks in modern full-stack apps and developer tools: exposed private-looking env vars, hardcoded provider keys, unsigned Stripe webhooks, missing Firebase/Supabase rule evidence, debug routes, missing usage guardrails, missing CI, loose dependency versions, thin release docs, missing MCP smoke-test proof, and unclear remote-server auth boundaries.
 
 ## Usage
 
@@ -38,6 +38,10 @@ jobs:
 | `fail-on` | `high` | Lowest severity that fails the workflow: `info`, `low`, `medium`, or `high`. |
 | `strict` | `false` | Set to `true` for stricter release-readiness checks. |
 | `version` | `latest` | npm version of `shipcheck-cli` to run. |
+
+## Verification
+
+This repository runs the Marketplace action against a small fixture on every push and pull request, including a SARIF output check. The fixture keeps the public action wrapper tested without requiring users to install anything beyond the workflow step.
 
 ## GitHub Code Scanning
 

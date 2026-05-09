@@ -1,0 +1,37 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  action-smoke-test:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Shipcheck action on fixture
+        uses: ./
+        with:
+          path: test-fixtures/basic-js
+          fail-on: high
+          strict: true
+          version: 0.4.5
+      - name: Produce SARIF through action
+        uses: ./
+        with:
+          path: test-fixtures/basic-js
+          format: sarif
+          output: shipcheck.sarif
+          fail-on: high
+          version: 0.4.5
+      - name: Validate SARIF output
+        run: |
+          node -e "const fs = require('fs'); const data = JSON.parse(fs.readFileSync('shipcheck.sarif', 'utf8')); if (data.version !== '2.1.0') throw new Error('Invalid SARIF version');"

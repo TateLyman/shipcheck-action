@@ -1,0 +1,14 @@
+{
+  "name": "shipcheck-action-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small fixture app for the Shipcheck Action smoke test.",
+  "type": "module",
+  "scripts": {
+    "build": "node --check src/index.js && node --check src/index.test.js",
+    "lint": "node --check src/index.js && node --check src/index.test.js",
+    "test": "node src/index.test.js"
+  },
+  "license": "MIT",
+  "devDependencies": {}
+}
